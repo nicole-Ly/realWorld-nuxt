@@ -33,12 +33,11 @@
 </template>
 
 <script>
-import {loginIn} from '@/api/login.js'
+import {login,register} from '@/api/login.js'
 export default {
   name:'loginIndex',
   data() {
     return { 
-      loginPage:this.$route.name=='login', 
       user:{
         name:'',
         email:'',
@@ -46,14 +45,18 @@ export default {
       }
     }
   },
-  watchQuery: ['page'],
+  // watchQuery: ['page'],
+  computed:{
+    loginPage(){
+      return this.$route.name==='login';
+    }
+  },
   mounted(){
     console.log(this.$route.name)
   },
   methods:{
-    handleLogin(){
-      loginIn({user:this.user})
-      return;
+    async handleLogin(){
+      this.loginPage ? await login({user:this.user}) : await register({user:this.user});
     }
   }
 }

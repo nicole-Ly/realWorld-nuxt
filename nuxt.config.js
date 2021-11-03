@@ -3,6 +3,7 @@ export default {
     extendRoutes(routes, resolve) {
       routes.splice(0)
       routes.push(...[{
+        linkActiveClass:'active',
         name: 'layout',
         path: '/',
         component: resolve(__dirname, 'pages/layout/index.vue'),

@@ -4,11 +4,11 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _ad31da4e = () => interopDefault(import('..\\pages\\layout\\index.vue' /* webpackChunkName: "" */))
-const _2798e844 = () => interopDefault(import('..\\pages\\home\\index.vue' /* webpackChunkName: "" */))
-const _89059130 = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "" */))
-const _b8862130 = () => interopDefault(import('..\\pages\\profile\\index.vue' /* webpackChunkName: "" */))
-const _1714cc61 = () => interopDefault(import('..\\pages\\setting\\index.vue' /* webpackChunkName: "" */))
+const _585e251e = () => interopDefault(import('../pages/layout/index.vue' /* webpackChunkName: "" */))
+const _30eff834 = () => interopDefault(import('../pages/home/index.vue' /* webpackChunkName: "" */))
+const _1c544a18 = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "" */))
+const _2778a150 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "" */))
+const _83206182 = () => interopDefault(import('../pages/setting/index.vue' /* webpackChunkName: "" */))
 
 const emptyFn = () => {}
 
@@ -23,31 +23,31 @@ export const routerOptions = {
 
   routes: [{
     path: "/",
-    component: _ad31da4e,
+    component: _585e251e,
     name: "layout",
     children: [{
       path: "/",
-      component: _2798e844,
+      component: _30eff834,
       name: "home"
     }, {
       path: "login",
-      component: _89059130,
+      component: _1c544a18,
       name: "login"
     }, {
       path: "register",
-      component: _89059130,
+      component: _1c544a18,
       name: "register"
     }, {
       path: "profile",
-      component: _b8862130,
+      component: _2778a150,
       name: "profile"
     }, {
       path: "setting",
-      component: _1714cc61,
+      component: _83206182,
       name: "setting"
     }, {
       path: "article",
-      component: _2798e844,
+      component: _30eff834,
       name: "article"
     }]
   }],

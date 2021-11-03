@@ -1,9 +1,17 @@
 import  request  from "./request.js";
 
-export const loginIn = (data) => {
+export const login = data => {
   return request({
     url:'/api/users/login',
-    method: 'post',
+    method: 'POST',
+    data
+  })
+}
+
+export const register = data => {
+  return request({
+    url:'/api/users',
+    method: 'POST',
     data
   })
 }
