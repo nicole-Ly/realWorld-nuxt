@@ -9,6 +9,7 @@ const _2798e844 = () => interopDefault(import('..\\pages\\home\\index.vue' /* we
 const _89059130 = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "" */))
 const _b8862130 = () => interopDefault(import('..\\pages\\profile\\index.vue' /* webpackChunkName: "" */))
 const _1714cc61 = () => interopDefault(import('..\\pages\\setting\\index.vue' /* webpackChunkName: "" */))
+const _31cbedf1 = () => interopDefault(import('..\\pages\\article\\edit.vue' /* webpackChunkName: "" */))
 
 const emptyFn = () => {}
 
@@ -24,7 +25,7 @@ export const routerOptions = {
   routes: [{
     path: "/",
     component: _ad31da4e,
-    name: "layout",
+    name: "home",
     children: [{
       path: "/",
       component: _2798e844,
@@ -49,6 +50,10 @@ export const routerOptions = {
       path: "article",
       component: _2798e844,
       name: "article"
+    }, {
+      path: "editor/:id?",
+      component: _31cbedf1,
+      name: "editor"
     }]
   }],
 

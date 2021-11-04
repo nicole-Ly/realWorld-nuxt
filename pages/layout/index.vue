@@ -10,7 +10,7 @@
           </li>
           <template v-if="user">
             <li class="nav-item">
-              <nuxt-link class="nav-link" to="/article">
+              <nuxt-link class="nav-link" to="/editor">
                 <i class="ion-compose"></i>&nbsp;New Article
               </nuxt-link>
             </li>

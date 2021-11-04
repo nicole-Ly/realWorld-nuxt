@@ -5,7 +5,7 @@ export default {
       routes.splice(0)
       routes.push(...[{
         linkActiveClass:'active',
-        name: 'layout',
+        name: 'home',
         path: '/',
         component: resolve(__dirname, 'pages/layout/index.vue'),
         children: [
@@ -39,6 +39,11 @@ export default {
             component: resolve(__dirname, 'pages/home/index.vue'),
             name: 'article'
           },
+          {
+            path: 'editor/:id?',
+            component: resolve(__dirname, 'pages/article/edit.vue'),
+            name: 'editor'
+          },
         ]
       }])
     }
@@ -46,5 +51,6 @@ export default {
   //注册插件
   plugins: [
     '~/plugins/request.js',
+    '~/plugins/dayjs.js'
   ]
 }
