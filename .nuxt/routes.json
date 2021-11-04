@@ -3,45 +3,45 @@
     "linkActiveClass": "active",
     "name": "layout",
     "path": "/",
-    "component": "/Users/lichan/code/trianCampus/demo/realWorld-nuxt/pages/layout/index.vue",
+    "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\layout\\\\index.vue",
     "children": [
       {
         "path": "/",
-        "component": "/Users/lichan/code/trianCampus/demo/realWorld-nuxt/pages/home/index.vue",
+        "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\home\\\\index.vue",
         "name": "home",
-        "_name": "_30eff834"
+        "_name": "_2798e844"
       },
       {
         "path": "login",
-        "component": "/Users/lichan/code/trianCampus/demo/realWorld-nuxt/pages/login/index.vue",
+        "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\login\\\\index.vue",
         "name": "login",
-        "_name": "_1c544a18"
+        "_name": "_89059130"
       },
       {
         "path": "register",
-        "component": "/Users/lichan/code/trianCampus/demo/realWorld-nuxt/pages/login/index.vue",
+        "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\login\\\\index.vue",
         "name": "register",
-        "_name": "_1c544a18"
+        "_name": "_89059130"
       },
       {
         "path": "profile",
-        "component": "/Users/lichan/code/trianCampus/demo/realWorld-nuxt/pages/profile/index.vue",
+        "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\profile\\\\index.vue",
         "name": "profile",
-        "_name": "_2778a150"
+        "_name": "_b8862130"
       },
       {
         "path": "setting",
-        "component": "/Users/lichan/code/trianCampus/demo/realWorld-nuxt/pages/setting/index.vue",
+        "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\setting\\\\index.vue",
         "name": "setting",
-        "_name": "_83206182"
+        "_name": "_1714cc61"
       },
       {
         "path": "article",
-        "component": "/Users/lichan/code/trianCampus/demo/realWorld-nuxt/pages/home/index.vue",
+        "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\home\\\\index.vue",
         "name": "article",
-        "_name": "_30eff834"
+        "_name": "_2798e844"
       }
     ],
-    "_name": "_585e251e"
+    "_name": "_ad31da4e"
   }
 ]
