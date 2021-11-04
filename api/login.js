@@ -1,17 +1,18 @@
 import  request  from "./request.js";
 
+//用户登录
 export const login = data => {
   return request({
-    url:'/api/users/login',
     method: 'POST',
+    url:'/api/users/login',
     data
   })
 }
-
+//用户注册
 export const register = data => {
   return request({
-    url:'/api/users',
     method: 'POST',
+    url: '/api/users',
     data
   })
 }

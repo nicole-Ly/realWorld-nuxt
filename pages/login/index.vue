@@ -8,21 +8,21 @@
                     <nuxt-link to="/register" v-if="loginPage">Need an account</nuxt-link>
                     <nuxt-link to="/login" v-else> Have an account</nuxt-link>
                   </p>
-                  <ul class="error-messages">
-                      <li>That email is already taken</li>
+                  <ul class="error-messages" v-if="errtip">
+                      <li>{{errtip}}</li>
                   </ul>
                   <form>
                       <fieldset class="form-group" v-if="!loginPage">
-                         <input class="form-control form-control-lg" type="text" v-model="user.name" placeholder="Your Name">
+                         <input class="form-control form-control-lg" type="text" v-model.trim="user.username" placeholder="Your Name" required>
                       </fieldset>
                       <fieldset class="form-group">
-                          <input class="form-control form-control-lg" type="text" v-model="user.email" placeholder="Email">
+                          <input class="form-control form-control-lg" type="email"  v-model.trim="user.email" placeholder="Email" required>
                       </fieldset>
                       <fieldset class="form-group">
-                          <input class="form-control form-control-lg" type="password" v-model="user.password" placeholder="Password">
+                          <input class="form-control form-control-lg" type="password" v-model.trim="user.password" placeholder="Password" required minlength="8">
                       </fieldset>
-                      <button class="btn btn-lg btn-primary pull-xs-right" @click.prevent="handleLogin"> 
-                          {{loginPage?'Sign Inp':'Sign up'}}
+                      <button class="btn btn-lg btn-primary pull-xs-right" @click.prevent="handleLogin" :disabled="disabled"> 
+                          {{loginPage?'Sign In':'Sign up'}}
                       </button>
                   </form>
               </div>
@@ -39,10 +39,12 @@ export default {
   data() {
     return { 
       user:{
-        name:'',
-        email:'',
-        password:''
-      }
+        username: 'nicole3',
+        email: 'nicole@163.com',
+        password: '12345678'
+      },
+      errtip:'',
+      disabled:false
     }
   },
   // watchQuery: ['page'],
@@ -55,8 +57,19 @@ export default {
     console.log(this.$route.name)
   },
   methods:{
+    validate(){
+
+    },
     async handleLogin(){
-      this.loginPage ? await login({user:this.user}) : await register({user:this.user});
+      const {email,password} = this.user;
+      this.disabled = true;
+      try {
+        const {data}  = this.loginPage ? await login({email,password}) : await register({user:this.user});
+        console.log(data)
+      } catch (err) {
+        this.errtip = err.response.data;
+      }
+      this.disabled = false;
     }
   }
 }
