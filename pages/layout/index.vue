@@ -21,7 +21,7 @@
             </li>
             <li class="nav-item">
               <nuxt-link class="nav-link" to="/profile">
-               <img style="borderRadius:50%" src="https://avatars.githubusercontent.com/u/23519389?s=40&v=4" alt="">
+                <img style="borderRadius:50%" src="https://avatars.githubusercontent.com/u/23519389?s=40&v=4" alt="">
                <span>{{user.username}}</span>
               </nuxt-link>
             </li>
@@ -58,9 +58,6 @@ export default {
   computed:{
     ...mapState(['user'])
   },
-  mounted(){
-    console.log(this.user)
-  }
 }
 </script>
 

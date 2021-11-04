@@ -1,4 +1,5 @@
 export default {
+  //自定义路由
   router: {
     extendRoutes(routes, resolve) {
       routes.splice(0)
@@ -41,5 +42,9 @@ export default {
         ]
       }])
     }
-  }
+  },
+  //注册插件
+  plugins: [
+    '~/plugins/request.js',
+  ]
 }

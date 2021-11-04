@@ -6,7 +6,6 @@ export const state = () => ({
 
 export const mutations = {
   setUser(state, data) {
-    console.log(3333333333333333,data)
     state.user = data
   }
 }
