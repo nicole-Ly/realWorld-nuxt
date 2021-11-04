@@ -8,40 +8,33 @@
       {
         "path": "/",
         "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\home\\\\index.vue",
-        "name": "home",
-        "_name": "_2798e844"
+        "name": "home"
       },
       {
         "path": "login",
         "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\login\\\\index.vue",
-        "name": "login",
-        "_name": "_89059130"
+        "name": "login"
       },
       {
         "path": "register",
         "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\login\\\\index.vue",
-        "name": "register",
-        "_name": "_89059130"
+        "name": "register"
       },
       {
         "path": "profile",
         "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\profile\\\\index.vue",
-        "name": "profile",
-        "_name": "_b8862130"
+        "name": "profile"
       },
       {
         "path": "setting",
         "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\setting\\\\index.vue",
-        "name": "setting",
-        "_name": "_1714cc61"
+        "name": "setting"
       },
       {
         "path": "article",
         "component": "G:\\\\trainCampus\\\\demo\\\\realWorld-nuxt\\\\pages\\\\home\\\\index.vue",
-        "name": "article",
-        "_name": "_2798e844"
+        "name": "article"
       }
-    ],
-    "_name": "_ad31da4e"
+    ]
   }
 ]

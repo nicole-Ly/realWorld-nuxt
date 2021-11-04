@@ -8,22 +8,32 @@
             <!-- Add "active" class when you're on that page" -->
             <nuxt-link class="nav-link" to="/">Home</nuxt-link>
           </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/article">
-              <i class="ion-compose"></i>&nbsp;New Article
-            </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/setting">
-              <i class="ion-gear-a"></i>&nbsp;Settings
-            </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/login">Sign in</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/register">Sign up</nuxt-link>
-          </li>
+          <template v-if="user">
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/article">
+                <i class="ion-compose"></i>&nbsp;New Article
+              </nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/setting">
+                <i class="ion-gear-a"></i>&nbsp;Settings
+              </nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/profile">
+               <img style="borderRadius:50%" src="https://avatars.githubusercontent.com/u/23519389?s=40&v=4" alt="">
+               <span>{{user.username}}</span>
+              </nuxt-link>
+            </li>
+          </template>
+          <template v-else>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/login">Sign in</nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/register">Sign up</nuxt-link>
+            </li>
+           </template>
         </ul>
       </div>
     </nav>
@@ -42,8 +52,15 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name: 'layoutIndex',
+  computed:{
+    ...mapState(['user'])
+  },
+  mounted(){
+    console.log(this.user)
+  }
 }
 </script>
 
