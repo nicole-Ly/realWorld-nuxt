@@ -20,7 +20,7 @@
               </nuxt-link>
             </li>
             <li class="nav-item">
-              <nuxt-link class="nav-link" to="/profile">
+              <nuxt-link class="nav-link" :to="`/profile/${user.username}`">
                 <img style="borderRadius:50%" src="https://avatars.githubusercontent.com/u/23519389?s=40&v=4" alt="">
                <span>{{user.username}}</span>
               </nuxt-link>

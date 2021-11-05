@@ -6,15 +6,14 @@
 
                 <div class="col-xs-12 col-md-10 offset-md-1">
                     <img src="http://i.imgur.com/Qr71crq.jpg" class="user-img"/>
-                    <h4>Eric Simons</h4>
+                    <h4>{{user.username}}</h4>
                     <p>
-                        Cofounder @GoThinkster, lived in Aol's HQ for a few months, kinda looks like Peeta from the
-                        Hunger Games
+                       {{user.bio}}
                     </p>
-                    <button class="btn btn-sm btn-outline-secondary action-btn">
+                    <button class="btn btn-sm btn-outline-secondary action-btn" @click.prevent="follow">
                         <i class="ion-plus-round"></i>
                         &nbsp;
-                        Follow Eric Simons
+                        Follow {{user.username}}
                     </button>
                 </div>
 
@@ -85,9 +84,28 @@
 </template>
 
 <script>
+import {getProfile,followUser,unfollowUser} from "@/api/user";
 export default {
   name:'profilePage',
   middleware: 'authenticated',
+  async asyncData({params}){
+    const {username} = params;
+    const userRes = await getProfile(username);
+    return {
+      user:userRes.data.profile,
+      username
+    }
+  },
+  methods:{
+    async follow(){
+      const {following,username} = this.user;
+      if(following){
+        await followUser(username)
+      }else{
+        await unfollowUser(username)
+      }
+    }
+  }
 }
 </script>
 

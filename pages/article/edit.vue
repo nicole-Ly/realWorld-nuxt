@@ -45,21 +45,31 @@ export default {
     }
   },
   computed:{
-    id(){
-      return this.$route.params.id||''
+    slug(){
+      return this.$route.params.slug||''
     }
   },
   async mounted(){
-    if(!this.id) return;
-    // this.article = await getArticle();
-    // console.log("4444444444",this.$route.params)
+    if(!this.slug) return;
+    const articleRes = await getArticle(this.slug);
+    const {article} = articleRes.data;
+    if(article.tagList.length) this.tag = article.tagList[0]
+    this.article = article;
   },
   methods:{
     async addArticle(){
-      let {article} = this;
-      article.tagList.push(this.tag)
-      await createArticle({article})
-      return;
+      let {slug,article} = this;
+      article.tagList=[this.tag]
+      try {
+        if(slug){
+          await updateArticle({slug,article})
+        }else{
+          await createArticle({article})
+        }
+        this.$router.push({ path: "/article/"+slug})
+      } catch (error) {
+        
+      }
     }
   }
 }

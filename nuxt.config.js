@@ -25,7 +25,7 @@ export default {
             name: 'register'
           },
           {
-            path: 'profile',
+            path: 'profile/:username',
             component: resolve(__dirname, 'pages/profile/index.vue'),
             name: 'profile'
           },
@@ -35,12 +35,12 @@ export default {
             name: 'setting'
           },
           {
-            path: 'article',
-            component: resolve(__dirname, 'pages/home/index.vue'),
+            path: 'article/:slug',
+            component: resolve(__dirname, 'pages/article/index.vue'),
             name: 'article'
           },
           {
-            path: 'editor/:id?',
+            path: 'editor/:slug?',
             component: resolve(__dirname, 'pages/article/edit.vue'),
             name: 'editor'
           },

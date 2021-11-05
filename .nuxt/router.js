@@ -9,6 +9,7 @@ const _2798e844 = () => interopDefault(import('..\\pages\\home\\index.vue' /* we
 const _89059130 = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "" */))
 const _b8862130 = () => interopDefault(import('..\\pages\\profile\\index.vue' /* webpackChunkName: "" */))
 const _1714cc61 = () => interopDefault(import('..\\pages\\setting\\index.vue' /* webpackChunkName: "" */))
+const _496989fb = () => interopDefault(import('..\\pages\\article\\index.vue' /* webpackChunkName: "" */))
 const _31cbedf1 = () => interopDefault(import('..\\pages\\article\\edit.vue' /* webpackChunkName: "" */))
 
 const emptyFn = () => {}
@@ -39,7 +40,7 @@ export const routerOptions = {
       component: _89059130,
       name: "register"
     }, {
-      path: "profile",
+      path: "profile/:username",
       component: _b8862130,
       name: "profile"
     }, {
@@ -47,11 +48,11 @@ export const routerOptions = {
       component: _1714cc61,
       name: "setting"
     }, {
-      path: "article",
-      component: _2798e844,
+      path: "article/:slug",
+      component: _496989fb,
       name: "article"
     }, {
-      path: "editor/:id?",
+      path: "editor/:slug?",
       component: _31cbedf1,
       name: "editor"
     }]

@@ -20,7 +20,7 @@ export const getFeedArticle = params => {
 export const getArticle = slug => {
   return request({
     method: 'GET',
-    url: `/api/articles/:${slug}`
+    url: `/api/articles/${slug}`
   })
 }
 
@@ -34,17 +34,19 @@ export const createArticle = data => {
 }
 
 //编辑文章
-export const updateArticle = slug => {
+export const updateArticle = ({ slug, article }) => {
+  console.log(33333333333344444444444)
   return request({
     method: 'PUT',
-    url: `/api/articles/:${slug}`
+    url: `/api/articles/${slug}`,
+    data:{article}
   })
 }
 //删除文章
 export const deleteArticle = slug => {
   return request({
     method: 'DELETE',
-    url: `/api/articles/:${slug}`
+    url: `/api/articles/${slug}`
   })
 }
 
@@ -52,14 +54,14 @@ export const deleteArticle = slug => {
 export const favorite = slug => {
   return request({
     method: 'POST',
-    url: `/api/articles/:${slug}/favorite`
+    url: `/api/articles/${slug}/favorite`
   })
 }
 //文章-取消点赞
 export const unfavorite = slug => {
   return request({
     method: 'DELETE',
-    url: `/api/articles/:${slug}/favorite`
+    url: `/api/articles/${slug}/favorite`
   })
 }
 
@@ -67,14 +69,15 @@ export const unfavorite = slug => {
 export const getComments = slug => {
   return request({
     method: 'GET',
-    url: `/api/articles/:${slug}/comments`
+    url: `/api/articles/${slug}/comments`
   })
 }
 //文章-添加评论
-export const addComment = slug => {
+export const addComment = ({ slug, comment }) => {
   return request({
     method: 'POST',
-    url: `/api/articles/:${slug}/comments`
+    url: `/api/articles/${slug}/comments`,
+    data:comment
   })
 }
 
@@ -82,7 +85,7 @@ export const addComment = slug => {
 export const deleteComment  = slug => {
   return request({
     method: 'DELETE',
-    url: `/api/articles/:${slug}/comments/:${id}`
+    url: `/api/articles/${slug}/comments/${id}`
   })
 }
 //获取Tags

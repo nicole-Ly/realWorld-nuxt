@@ -1,42 +1,50 @@
 <template>
-  <div class="editor-page">
-      <div class="container page">
-          <div class="row">
-
-              <div class="col-md-10 offset-md-1 col-xs-12">
-                  <form>
-                      <fieldset>
-                          <fieldset class="form-group">
-                              <input type="text" class="form-control form-control-lg" placeholder="Article Title">
-                          </fieldset>
-                          <fieldset class="form-group">
-                              <input type="text" class="form-control" placeholder="What's this article about?">
-                          </fieldset>
-                          <fieldset class="form-group">
-                              <textarea class="form-control" rows="8"
-                                        placeholder="Write your article (in markdown)"></textarea>
-                          </fieldset>
-                          <fieldset class="form-group">
-                              <input type="text" class="form-control" placeholder="Enter tags">
-                              <div class="tag-list"></div>
-                          </fieldset>
-                          <button class="btn btn-lg pull-xs-right btn-primary" type="button">
-                              Publish Article
-                          </button>
-                      </fieldset>
-                  </form>
-              </div>
-
-          </div>
+  <div class="article-page">
+    <div class="banner">
+      <div class="container">
+        <h1>{{article.title}}</h1>
+        <article-meta :article="article" type="1"></article-meta>
       </div>
-  </div>
+    </div>
+
+    <div class="container page">
+      <div class="row article-content">
+        <div class="col-md-12" v-html="article.body"></div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="article-actions">
+        <article-meta :article="article" type="2"></article-meta>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-8 offset-md-2">
+          <article-comments :article="article" ></article-comments>
+        </div>
+      </div>
+    </div>
 </template>
 <script>
+import { getArticle} from "@/api/article";
+import articleMeta from './components/article-meta.vue'
+import articleComments from './components/article-comments.vue'
 export default {
-  
-}
+  name:'articlePage',
+  components:{
+    articleMeta,
+    articleComments
+  },
+  async asyncData({ params }) {
+    console.log("33333333333",params)
+    const {slug} = params;
+    const articleRes = await getArticle(slug)
+    return {
+      article:articleRes.data.article
+    }
+  }
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
