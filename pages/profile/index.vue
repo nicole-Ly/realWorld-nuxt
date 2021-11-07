@@ -39,7 +39,7 @@
                     <div class="article-meta">
                         <a href=""><img src="http://i.imgur.com/Qr71crq.jpg"/></a>
                         <div class="info">
-                            <a href="" class="author">Eric Simons</a>
+                            <a href="" class="author">nicole</a>
                             <span class="date">January 20th</span>
                         </div>
                         <button class="btn btn-outline-primary btn-sm pull-xs-right">
