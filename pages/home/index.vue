@@ -64,7 +64,7 @@
             :key="article.slug"
           >
             <div class="article-meta">
-              <nuxt-link :to="`/profile/${user.username}`">
+              <nuxt-link :to="`/profile/${article.author.username}`">
                 <img :src="article.author.image" />
               </nuxt-link>
               <div class="info">
